@@ -49,8 +49,17 @@ class AdminController extends Controller
             //*disable checkout until checkedin
             //get the latest record
             $lastRecoed =  Register::latest()->first();
-            $checkoutDisabled = ($lastRecoed->checkout == null)? false : true;
-            $checkinDisabled3 = ($lastRecoed->checkout == null)? true : false;
+           
+            //check if there is no records
+            if (!empty($lastRecoed)) {
+                $checkoutDisabled = ($lastRecoed->checkout == null)? false : true;
+                $checkinDisabled3 = ($lastRecoed->checkout == null)? true : false;
+            } else {
+                $checkoutDisabled = true;
+                $checkinDisabled3 = false;
+            }
+            
+         
 
             //*checkin before 12pm
             $currentTime = date("H:i:s" , strtotime(' + 3 hours'));
