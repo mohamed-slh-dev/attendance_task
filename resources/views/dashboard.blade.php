@@ -169,7 +169,10 @@
 													if ($diff < 0) {
 													print('N/A');
 												}else{
-													print(date('H:i:s', $diff ));
+													print(
+														date('H', $diff )." H - ".date('i', $diff )." M - ".
+														date('s', $diff )." S "
+													);
 												
 													
 												}
