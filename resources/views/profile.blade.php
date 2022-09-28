@@ -106,7 +106,7 @@
 
 
 							<div class="col-sm-12 col-lg-4 col-md-6 mb-4">
-                                <label for="name">Contract</label>
+                                <label for="name">Image</label>
                                 <input type="file" name="image" class="form-control">
                             </div>
 
